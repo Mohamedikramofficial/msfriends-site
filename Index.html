@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ms Friends — Cleaning & Pest Control in Doha (24/7)</title>
+<meta name="description" content="24/7 cleaning & pest control in Doha. Cockroach & bedbug treatment, mosquito control, deep cleaning. WhatsApp +974 77430206." />
+<style>
+  :root{ --brand:#16a34a; --brand2:#22c55e; --ink:#0f172a; --muted:#475569;
+    --bg:#f7fafc; --card:#ffffff; --ring:rgba(34,197,94,.25);
+    --max:1080px; --shadow:0 10px 30px rgba(2,6,23,.08); }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--muted);line-height:1.55;overflow-x:hidden;position:relative}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:auto;padding:16px}
+
+  /* HEADER */
+  .header{position:sticky;top:0;z-index:60;background:#ffffffcc;backdrop-filter:blur(10px);border-bottom:1px solid #e9eef5}
+  .h-in{max-width:var(--max);margin:auto;padding:10px 14px;display:flex;align-items:center;gap:12px}
+  .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:0 6px 16px var(--ring)}
+  .brandname{font-weight:800;color:var(--ink)}
+  .tag{font-size:12px;color:#6b7280}
+  .sp{flex:1}
+  .lang{display:flex;gap:6px}
+  .lang button{border:0;background:#ecfdf5;color:#065f46;font-weight:700;padding:6px 10px;border-radius:8px;cursor:pointer}
+  .lang button.active{background:var(--brand);color:#fff}
+
+  /* BUBBLES + SPARKLES BACKGROUND */
+  .bg-bubbles{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+  .bubble{position:absolute;bottom:-60px;width:20px;height:20px;background:rgba(200,255,255,0.35);border-radius:50%;animation:rise 12s linear infinite}
+  @keyframes rise{0%{transform:translateY(0) scale(1);opacity:0}30%{opacity:1}100%{transform:translateY(-110vh) scale(1.5);opacity:0}}
+  .sparkle{position:absolute;width:6px;height:6px;background:#fff;border-radius:50%;box-shadow:0 0 6px #fff,0 0 12px #a7f3d0;animation:twinkle 3s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.4)}}
+
+  /* HERO */
+  .hero{margin:16px auto;background:linear-gradient(180deg,#fff,#f0fdf4);border-radius:20px;box-shadow:var(--shadow);padding:22px 16px}
+  .hero h1{margin:0 0 8px;color:var(--ink);font-size:clamp(22px,5.5vw,36px)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 2px}
+  .chip{background:#fff;border:1px solid #e5e7eb;padding:8px 12px;border-radius:999px;font-weight:600}
+  .rowb{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;border:1px solid #dbe3ef;background:#fff;font-weight:800;color:#065f46}
+  .btn-primary{background:var(--brand);border:0;color:#fff;box-shadow:0 10px 20px var(--ring)}
+  .rowb .btn{flex:1 1 180px}
+
+  /* GRID / CARDS */
+  .grid{display:grid;gap:16px;margin-top:16px;grid-template-columns:1fr}
+  @media (min-width:920px){.grid{grid-template-columns:1.05fr .95fr}}
+  .card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:16px;margin-top:16px}
+  .card h2{margin:6px 0 12px;color:var(--ink)}
+  .card h3{margin:0 0 8px;color:#0f172a}
+
+  /* FORM */
+  .row{display:grid;gap:12px;grid-template-columns:1fr}
+  @media (min-width:560px){.row.two{grid-template-columns:1fr 1fr}}
+  label{font-weight:700;font-size:14px;color:#1f2937}
+  input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid #e5e7eb;background:#fff;font-size:15px;outline:0;transition:.2s}
+  textarea{min-height:110px;resize:vertical}
+  input:focus,select:focus,textarea:focus{border-color:#bbf7d0;box-shadow:0 0 0 5px #dcfce7}
+  .submit{margin-top:6px}
+
+  /* SERVICES */
+  .svc-cat{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:14px;margin-bottom:12px}
+  .svc-list{display:grid;gap:10px;grid-template-columns:1fr}
+  @media (min-width:700px){.svc-list{grid-template-columns:repeat(2,1fr)}}
+  .svc{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px}
+  .ico{width:28px;height:28px;border-radius:9px;background:#ecfdf5;display:grid;place-items:center;color:#065f46;font-weight:900;flex:0 0 28px}
+
+  /* SPRAY MIST */
+  .spray-box{display:inline-flex;align-items:center;gap:8px}
+  .mist{position:relative;width:120px;height:40px;overflow:visible}
+  .mist span{position:absolute;bottom:18px;left:0;width:6px;height:6px;background:rgba(200,255,200,0.7);border-radius:50%;animation:spray 1.2s linear forwards}
+  @keyframes spray{0%{transform:translateX(0) translateY(0) scale(1);opacity:1}100%{transform:translateX(120px) translateY(-20px) scale(.3);opacity:0}}
+
+  /* CONTACT */
+  .contact-item{margin-bottom:8px;font-weight:600}
+  .map{position:relative;width:100%;padding-top:60%;border-radius:16px;overflow:hidden;background:#eef2f7}
+  .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* FOOTER */
+  footer{text-align:center;font-size:13px;color:#64748b;padding:30px 10px 70px}
+
+  /* PESTS */
+  .bugs-layer{position:fixed; inset:0; pointer-events:none; z-index:20;}
+  .bug{position:absolute; will-change:transform; opacity:.9}
+  .roach{width:40px;height:40px}
+  .bedbug{width:26px;height:26px; opacity:.85}
+  @keyframes wiggle{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(.6px) rotate(.3deg)}}
+  .roach svg .leg{animation: wiggle .35s infinite}
+  .toggle-bugs{position:fixed; left:12px; bottom:18px; z-index:70; background:#fff; border:1px solid #e2e8f0; border-radius:12px;box-shadow:var(--shadow); padding:8px 10px; display:flex; gap:8px; align-items:center; font-weight:700;}
+  .toggle-bugs input{accent-color:var(--brand)}
+
+  /* FAQ (accordion) */
+  .faq details{border:1px solid #e5e7eb;background:#fff;border-radius:14px;padding:10px 12px;margin:10px 0;box-shadow:var(--shadow)}
+  .faq summary{cursor:pointer;font-weight:800;color:#0f172a;list-style:none;display:flex;align-items:center;gap:8px}
+  .faq summary::-webkit-details-marker{display:none}
+  .caret{transition:.2s transform}
+  details[open] .caret{transform:rotate(90deg)}
+  .faq p{margin:8px 0 0}
+
+  /* RTL font */
+  html[dir="rtl"] body{font-family:"Noto Naskh Arabic", Tahoma, Arial}
+</style>
+</head>
+<body>
+  <div class="bg-bubbles" id="bgBubbles"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="h-in">
+      <div class="logo">MF</div>
+      <div>
+        <div class="brandname" data-i="brand">Ms Friends Trading & Contracting</div>
+        <div class="tag" data-i="tagline">Cleaning & Pest Control • Open 24/7</div>
+      </div>
+      <div class="sp"></div>
+      <div class="lang">
+        <button id="enBtn" class="active">EN</button>
+        <button id="arBtn">العربية</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pests layer + toggle -->
+  <div class="bugs-layer" id="bugsLayer"></div>
+  <label class="toggle-bugs"><input type="checkbox" id="bugsToggle" checked/> 🐞 <span data-i="toggleBugs">Show pests animation</span></label>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <h1 data-i="heroTitle">Sparkling Cleaning & Pest Control in Doha</h1>
+      <p data-i="heroSub">Trained & insured staff, family-safe materials, and before/after proof photos. 24/7 same-day & emergency service.</p>
+      <div class="chips">
+        <span class="chip" data-i="chip1">24/7 Available</span>
+        <span class="chip" data-i="chip2">Safe for Family & Pets</span>
+        <span class="chip" data-i="chip3">Same-day Response</span>
+      </div>
+      <div class="rowb">
+        <a id="waHero" class="btn btn-primary" href="#" data-i="ctaWhatsApp">WhatsApp Us</a>
+        <a class="btn" href="#booking" data-i="bookService">Book a Service</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="card" id="about">
+      <h2 data-i="aboutTitle">About Us</h2>
+      <p data-i="aboutWho">Ms Friends is a Doha-based cleaning and pest control company delivering reliable, eco-friendly services for homes, offices, and facilities...</p>
+      <h3 data-i="aboutDiffTitle">What makes us different</h3>
+      <ul style="margin:0 0 0 18px">
+        <li data-i="diff1">24/7 availability for cleaning & pest emergencies</li>
+        <li data-i="diff2">Trained & insured staff</li>
+        <li data-i="diff3">Family & pet-safe materials</li>
+        <li data-i="diff4">Transparent pricing, no surprises</li>
+        <li data-i="diff5">Proof-of-work photos after every job</li>
+        <li data-i="diff6">100% satisfaction guarantee</li>
+      </ul>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="card">
+      <h2 data-i="bookTitle">Book a Service (24/7)</h2>
+      <form id="bookForm">
+        <div class="row two">
+          <div><label data-i="lblName">Name</label><input id="name" required placeholder="Your name"></div>
+          <!-- CHANGE #1: use neutral placeholder, NOT your real number -->
+          <div><label data-i="lblPhone">WhatsApp</label><input id="phone" required placeholder="9745xxxxxx" inputmode="tel"></div>
+        </div>
+        <div class="row two">
+          <div>
+            <label data-i="lblService">Service</label>
+            <select id="service" required>
+              <!-- CHANGE #2: bilingual options; we translate text AND value via JS -->
+              <option data-i="svc0" value="Cockroach & Bedbug Treatment">Cockroach & Bedbug Treatment</option>
+              <option data-i="svc1" value="Mosquito/Fly Control">Mosquito/Fly Control</option>
+              <option data-i="svc2" value="Home Cleaning">Home Cleaning</option>
+              <option data-i="svc3" value="Deep Cleaning">Deep Cleaning</option>
+              <option data-i="svc4" value="Sofa & Carpet Shampoo">Sofa & Carpet Shampoo</option>
+              <option data-i="svc5" value="Post-construction Cleaning">Post-construction Cleaning</option>
+              <option data-i="svc6" value="Window/Glass Cleaning">Window/Glass Cleaning</option>
+              <option data-i="svc7" value="Water Tank Cleaning">Water Tank Cleaning</option>
+              <option data-i="svc8" value="AC Duct Cleaning">AC Duct Cleaning</option>
+              <option data-i="svc9" value="Office/Commercial Cleaning">Office/Commercial Cleaning</option>
+            </select>
+          </div>
+          <div><label data-i="lblDate">Preferred Date</label><input id="date" type="date" required></div>
+        </div>
+        <div class="row two">
+          <div><label data-i="lblTime">Preferred Time</label><input id="time" type="time" required></div>
+          <div><label data-i="lblPlace">Location / Address</label><input id="place" required placeholder="Area, tower/villa, flat #, parking notes"></div>
+        </div>
+        <div class="row"><div><label data-i="lblNotes">Notes</label><textarea id="notes" placeholder="E.g., 2BHK; kitchen cockroaches; please bring ladder."></textarea></div></div>
+        <div class="submit"><button class="btn btn-primary" id="sendBtn" type="submit" data-i="sendBtn">Send via WhatsApp</button></div>
+      </form>
+    </section>
+
+    <!-- SERVICES (no emojis in headings) -->
+    <section class="card" id="services">
+      <h2 data-i="servicesTitle">Services</h2>
+
+      <div class="svc-cat">
+        <h3 data-i="catRes">Residential Cleaning</h3>
+        <div class="svc-list">
+          <div class="svc"><div class="ico">✓</div><div data-i="res1">Regular apartment & villa cleaning (daily / weekly / monthly)</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="res2">Deep cleaning (spring, move-in/move-out)</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="res3">Kitchen & bathroom deep cleaning</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="res4">Sofa, carpet & curtain shampooing</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="res5">Mattress & upholstery cleaning (dust mites, stains)</div></div>
+        </div>
+      </div>
+
+      <div class="svc-cat">
+        <h3 data-i="catCom">Commercial Cleaning</h3>
+        <div class="svc-list">
+          <div class="svc"><div class="ico">✓</div><div data-i="com1">Office cleaning (daily / scheduled)</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="com2">Shops & showrooms</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="com3">Schools & nurseries</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="com4">Restaurants & cafés hygiene cleaning</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="com5">Hotel housekeeping support</div></div>
+        </div>
+      </div>
+
+      <div class="svc-cat">
+        <h3 data-i="catSpec">Specialized Cleaning</h3>
+        <div class="svc-list">
+          <div class="svc"><div class="ico">✓</div><div data-i="sp1">Post-construction / renovation cleaning</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="sp2">Glass & window cleaning (interior/exterior, low/high areas)</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="sp3">Floor care: marble polishing, tile scrubbing, wood care</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="sp4">Water tank cleaning</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="sp5">AC duct cleaning</div></div>
+        </div>
+      </div>
+
+      <div class="svc-cat" id="pest">
+        <h3><span data-i="catPest">Pest Control</span>
+          <span class="spray-box">
+            <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><rect x="20" y="24" width="20" height="16" rx="3" fill="#4b5563"/><rect x="28" y="10" width="8" height="14" rx="2" fill="#9ca3af"/><rect x="25" y="40" width="14" height="12" rx="2" fill="#6b7280"/></svg>
+            <div class="mist"></div>
+          </span>
+        </h3>
+        <div class="svc-list">
+          <div class="svc"><div class="ico">✓</div><div data-i="pc1">Cockroach & bedbug treatment (inspection + targeted treatment + follow-up)</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="pc2">Rodent control (proofing & traps)</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="pc3">Ant & termite treatment</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="pc4">Mosquito & fly control (ULV fogging / misting; larvicide for stagnant water)</div></div>
+          <div class="svc"><div class="ico">✓</div><div data-i="pc5">Disinfection & sanitization</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY / AREAS / HOURS -->
+    <section class="grid">
+      <div class="card">
+        <h2 data-i="whyTitle">Why Choose Ms Friends?</h2>
+        <ul style="margin:0 0 0 18px">
+          <li data-i="why1">24/7 service — we never close</li>
+          <li data-i="why2">Same-day and emergency call-outs</li>
+          <li data-i="why3">Eco-friendly & family-safe materials</li>
+          <li data-i="why4">Trained, uniformed, insured staff</li>
+          <li data-i="why5">WhatsApp updates + proof photos</li>
+          <li data-i="why6">Clear pricing & written scope before we start</li>
+          <li data-i="why7">100% satisfaction guarantee</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 data-i="areasTitle">Service Areas</h2>
+        <p data-i="areasText">Doha • Lusail • Al Wakrah • Al Khor • The Pearl • West Bay • and all nearby areas across Qatar.</p>
+        <h3 data-i="hoursTitle" style="margin-top:10px">Working Hours</h3>
+        <p data-i="hoursText">24 Hours • 7 Days a Week • Emergency Service Available</p>
+      </div>
+    </section>
+
+    <!-- SAFETY -->
+    <section class="card">
+      <h2 data-i="safetyTitle">Safety & Standards</h2>
+      <ul style="margin:0 0 0 18px">
+        <li data-i="safe1">Family & pet-safe chemicals (MSDS available)</li>
+        <li data-i="safe2">Staff ID & uniforms, background-checked</li>
+        <li data-i="safe3">Tools sanitized between jobs</li>
+        <li data-i="safe4">Proper ventilation & PPE during treatments</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card faq">
+      <h2 data-i="faqTitle">FAQs</h2>
+      <details><summary><span class="caret">▶</span> <span data-i="q1">Are your chemicals safe for kids and pets?</span></summary><p data-i="a1">Yes. We only use MOI-approved, eco-friendly materials. Short ventilation is advised after treatment for maximum safety.</p></details>
+      <details><summary><span class="caret">▶</span> <span data-i="q2">How fast can you respond?</span></summary><p data-i="a2">We operate 24/7. Most bookings are same-day, and emergency pest control can arrive within 1–2 hours inside Doha.</p></details>
+      <details><summary><span class="caret">▶</span> <span data-i="q3">Do I need to leave my home during pest treatment?</span></summary><p data-i="a3">Light treatments don’t require it, but for strong cockroach/bedbug work we recommend stepping out 2–4 hours. Our team advises case by case.</p></details>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="grid">
+      <div class="card">
+        <h2 data-i="contactTitle">Contact</h2>
+        <div class="contact-item"><strong data-i="waLabel">WhatsApp / Call:</strong> <a href="tel:+97477430206">+974 77430206</a></div>
+        <div class="contact-item"><strong data-i="emailLabel">Email:</strong> <a href="mailto:info@msffrieds.qa">info@msffrieds.qa</a></div>
+        <div class="contact-item"><strong data-i="locLabel">Location:</strong> <span data-i="locText">Doha, Qatar</span></div>
+        <div class="map" style="margin-top:10px">
+          <iframe src="https://www.google.com/maps?q=Doha%20Qatar&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="card">
+        <h2 data-i="ctaTitle">Ready to book?</h2>
+        <p data-i="ctaText">Message us on WhatsApp anytime—day or night. We’ll confirm your time and send a team fast.</p>
+        <a id="waContact" class="btn btn-primary" style="margin-top:8px;display:inline-block" href="#" data-i="ctaWhatsApp">WhatsApp Us</a>
+      </div>
+    </section>
+
+    <footer>© <span id="yr"></span> <span data-i="brand">Ms Friends Trading & Contracting</span> — <span data-i="footerCity">Cleaning & Pest Control, Doha, Qatar</span> • <span data-i="footerOpen">Open 24/7</span></footer>
+  </main>
+
+  <a class="btn btn-primary" id="waFloat" style="position:fixed; right:16px; bottom:18px; z-index:70;" data-i="ctaWhatsApp">WhatsApp Us</a>
+
+<script>
+/* ===== Constants ===== */
+const WA_NUMBER="97477430206";
+const SUPPORT_EMAIL="info@msffrieds.qa";
+
+/* ===== WhatsApp helpers ===== */
+const wa=(t="Hi! I need a service.")=>`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t)}`;
+function setWA(){
+  document.getElementById("waHero").href=wa("Hi! I need cleaning/pest control. Are you available now?");
+  document.getElementById("waFloat").href=wa();
+  document.getElementById("waContact").href=wa("Hello! I’d like to ask about your 24/7 services.");
+}
+setWA();
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+/* ===== Booking form -> WhatsApp ===== */
+document.getElementById("bookForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const v=id=>(document.getElementById(id).value||"").trim();
+  const lines=[
+    "New Booking (Website)",
+    `• Name: ${v("name")}`,
+    `• WhatsApp: ${v("phone")}`,
+    `• Service: ${v("service")}`,
+    `• Date: ${v("date")}`,
+    `• Time: ${v("time")}`,
+    `• Location: ${v("place")}`,
+    v("notes")?`• Notes: ${v("notes")}`:"",
+    `• Email: ${SUPPORT_EMAIL}`
+  ].filter(Boolean).join("\n");
+  window.open(wa(lines), "_blank");
+});
+
+/* ===== Cleaning background (bubbles + sparkles) ===== */
+const bg=document.getElementById("bgBubbles");
+for(let i=0;i<22;i++){
+  const b=document.createElement("div");
+  b.className="bubble";
+  b.style.left=Math.random()*100+"%";
+  b.style.animationDuration=(9+Math.random()*9)+"s";
+  const s=(10+Math.random()*28)+"px";
+  b.style.width=s;b.style.height=s;
+  bg.appendChild(b);
+}
+for(let i=0;i<16;i++){
+  const s=document.createElement("div");
+  s.className="sparkle";
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+  s.style.animationDuration=(2+Math.random()*3)+"s";
+  bg.appendChild(s);
+}
+
+/* ===== Spray mist ===== */
+function sprayMist(){
+  const mist=document.querySelector(".mist");
+  if(!mist) return;
+  for(let i=0;i<6;i++){
+    const d=document.createElement("span");
+    d.style.left="0px";
+    d.style.bottom=(12+Math.random()*12)+"px";
+    d.style.animationDelay=(i*0.12)+"s";
+    mist.appendChild(d);
+    setTimeout(()=>d.remove(),1500);
+  }
+}
+setInterval(sprayMist,3000);
+
+/* ===== Pests animation ===== */
+const bugsLayer=document.getElementById("bugsLayer"),toggle=document.getElementById("bugsToggle");
+const SVGs={
+  roach:`<svg viewBox="0 0 64 64" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><g fill="#4b2e17" stroke="#1f2937" stroke-width="1.5" stroke-linecap="round"><ellipse cx="32" cy="34" rx="10" ry="16"/><ellipse cx="32" cy="20" rx="6" ry="8" fill="#5c3a1e"/><line class="leg" x1="24" y1="28" x2="8" y2="22"/><line class="leg" x1="24" y1="36" x2="8" y2="42"/><line class="leg" x1="40" y1="28" x2="56" y2="22"/><line class="leg" x1="40" y1="36" x2="56" y2="42"/><line x1="30" y1="14" x2="18" y2="6"/><line x1="34" y1="14" x2="46" y2="6"/></g></svg>`,
+  bedbug:`<svg viewBox="0 0 64 64" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><g fill="#6b3f1e" stroke="#1f2937" stroke-width="1.4" stroke-linecap="round"><ellipse cx="32" cy="38" rx="12" ry="10"/><ellipse cx="32" cy="24" rx="9" ry="8" fill="#7b4a25"/><line x1="23" y1="36" x2="10" y2="42"/><line x1="41" y1="36" x2="54" y2="42"/><line x1="29" y1="18" x2="18" y2="10"/><line x1="35" y1="18" x2="46" y2="10"/></g></svg>`
+};
+const roaches=[], bedbugs=[];
+for(let i=0;i<4;i++){
+  const el=document.createElement("div");
+  el.className="bug roach"; el.innerHTML=SVGs.roach;
+  el.style.bottom=(4+Math.random()*12)+"px";
+  el.style.left=(10+Math.random()*200)+"px";
+  el.dataset.dir=Math.random()<.5?"-1":"1";
+  bugsLayer.appendChild(el); roaches.push(el);
+}
+for(let i=0;i<6;i++){
+  const el=document.createElement("div");
+  el.className="bug bedbug"; el.innerHTML=SVGs.bedbug;
+  el.style.left=(Math.random()*window.innerWidth)+"px";
+  el.style.top=(Math.random()*window.innerHeight*0.6+20)+"px";
+  el.dataset.t=(Math.random()*500)|0;
+  el.dataset.speed=0.6+Math.random()*1.2;
+  el.dataset.amp=10+Math.random()*22;
+  el.dataset.phase=Math.random()*Math.PI*2;
+  bugsLayer.appendChild(el); bedbugs.push(el);
+}
+function animate(){
+  if(!toggle.checked){ requestAnimationFrame(animate); return; }
+  const w=window.innerWidth, h=window.innerHeight;
+  roaches.forEach(r=>{
+    let x=(parseFloat(r.style.left)||0)+(parseInt(r.dataset.dir,10)*1.1);
+    if(x>w-50){ r.dataset.dir="-1"; r.style.transform="scaleX(-1)"; }
+    if(x<4){ r.dataset.dir="1"; r.style.transform="scaleX(1)"; }
+    r.style.left=x+"px";
+  });
+  bedbugs.forEach(b=>{
+    let t=(+b.dataset.t)+1; b.dataset.t=t;
+    const rect=b.getBoundingClientRect();
+    const x=rect.left+(+b.dataset.speed);
+    const baseY=parseFloat(b.style.top)||40;
+    const y=baseY+Math.sin(t/18+(+b.dataset.phase))*(+b.dataset.amp);
+    b.style.transform=`translate(${x-rect.left}px, ${y-baseY}px)`;
+    if(x>w+40){ b.style.left="-40px"; b.style.top=(Math.random()*h*0.6+20)+"px"; b.dataset.t=(Math.random()*1000)|0; }
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+toggle.addEventListener("change",()=>{bugsLayer.style.display=toggle.checked?"block":"none";});
+
+/* ===== i18n (EN / AR) ===== */
+let lang="en";
+const dict={
+  en:{
+    brand:"Ms Friends Trading & Contracting",
+    tagline:"Cleaning & Pest Control • Open 24/7",
+    toggleBugs:"Show pests animation",
+    heroTitle:"Sparkling Cleaning & Pest Control in Doha",
+    heroSub:"Trained & insured staff, family-safe materials, and before/after proof photos. 24/7 same-day & emergency service.",
+    chip1:"24/7 Available", chip2:"Safe for Family & Pets", chip3:"Same-day Response",
+    ctaWhatsApp:"WhatsApp Us", bookService:"Book a Service",
+
+    aboutTitle:"About Us",
+    aboutWho:"Ms Friends is a Doha-based cleaning and pest control company delivering reliable, eco-friendly services for homes, offices, and facilities. We combine professional training with honest communication and fast response—so you get results you can see right away, any time of the day or night.",
+    aboutDiffTitle:"What makes us different",
+    diff1:"24/7 availability for cleaning & pest emergencies",
+    diff2:"Trained & insured staff",
+    diff3:"Family & pet-safe materials",
+    diff4:"Transparent pricing, no surprises",
+    diff5:"Proof-of-work photos after every job",
+    diff6:"100% satisfaction guarantee",
+
+    vmTitle:"Vision & Mission",
+    visionTitle:"Vision",
+    visionText:"To be Doha’s most trusted name in cleaning and pest control—available 24 hours a day—known for fast response, professional teams, and eco-friendly results.",
+    missionTitle:"Mission",
+    missionText:"Deliver spotless spaces and pest-free homes through trained & insured staff, safe materials, clear communication, and verified before/after results—any time you need us.",
+
+    bookTitle:"Book a Service (24/7)",
+    lblName:"Name", lblPhone:"WhatsApp", lblService:"Service", lblDate:"Preferred Date", lblTime:"Preferred Time", lblPlace:"Location / Address", lblNotes:"Notes", sendBtn:"Send via WhatsApp",
+
+    /* Dropdown options */
+    svc0:"Cockroach & Bedbug Treatment",
+    svc1:"Mosquito/Fly Control",
+    svc2:"Home Cleaning",
+    svc3:"Deep Cleaning",
+    svc4:"Sofa & Carpet Shampoo",
+    svc5:"Post-construction Cleaning",
+    svc6:"Window/Glass Cleaning",
+    svc7:"Water Tank Cleaning",
+    svc8:"AC Duct Cleaning",
+    svc9:"Office/Commercial Cleaning",
+
+    servicesTitle:"Services",
+    catRes:"Residential Cleaning",
+    res1:"Regular apartment & villa cleaning (daily / weekly / monthly)",
+    res2:"Deep cleaning (spring, move-in/move-out)",
+    res3:"Kitchen & bathroom deep cleaning",
+    res4:"Sofa, carpet & curtain shampooing",
+    res5:"Mattress & upholstery cleaning (dust mites, stains)",
+    catCom:"Commercial Cleaning",
+    com1:"Office cleaning (daily / scheduled)",
+    com2:"Shops & showrooms",
+    com3:"Schools & nurseries",
+    com4:"Restaurants & cafés hygiene cleaning",
+    com5:"Hotel housekeeping support",
+    catSpec:"Specialized Cleaning",
+    sp1:"Post-construction / renovation cleaning",
+    sp2:"Glass & window cleaning (interior/exterior, low/high areas)",
+    sp3:"Floor care: marble polishing, tile scrubbing, wood care",
+    sp4:"Water tank cleaning",
+    sp5:"AC duct cleaning",
+    catPest:"Pest Control",
+    pc1:"Cockroach & bedbug treatment (inspection + targeted treatment + follow-up)",
+    pc2:"Rodent control (proofing & traps)",
+    pc3:"Ant & termite treatment",
+    pc4:"Mosquito & fly control (ULV fogging / misting; larvicide for stagnant water)",
+    pc5:"Disinfection & sanitization",
+
+    whyTitle:"Why Choose Ms Friends?",
+    why1:"24/7 service — we never close",
+    why2:"Same-day and emergency call-outs",
+    why3:"Eco-friendly & family-safe materials",
+    why4:"Trained, uniformed, insured staff",
+    why5:"WhatsApp updates + proof photos",
+    why6:"Clear pricing & written scope before we start",
+    why7:"100% satisfaction guarantee",
+
+    areasTitle:"Service Areas",
+    areasText:"Doha • Lusail • Al Wakrah • Al Khor • The Pearl • West Bay • and all nearby areas across Qatar.",
+    hoursTitle:"Working Hours",
+    hoursText:"24 Hours • 7 Days a Week • Emergency Service Available",
+
+    safetyTitle:"Safety & Standards",
+    safe1:"Family & pet-safe chemicals (MSDS available)",
+    safe2:"Staff ID & uniforms, background-checked",
+    safe3:"Tools sanitized between jobs",
+    safe4:"Proper ventilation & PPE during treatments",
+
+    faqTitle:"FAQs",
+    q1:"Are your chemicals safe for kids and pets?", a1:"Yes. We only use MOI-approved, eco-friendly materials. Short ventilation is advised after treatment for maximum safety.",
+    q2:"How fast can you respond?", a2:"We operate 24/7. Most bookings are same-day, and emergency pest control can arrive within 1–2 hours inside Doha.",
+    q3:"Do I need to leave my home during pest treatment?", a3:"Light treatments don’t require it, but for strong cockroach/bedbug work we recommend stepping out 2–4 hours. Our team advises case by case.",
+
+    contactTitle:"Contact",
+    waLabel:"WhatsApp / Call:", emailLabel:"Email:", locLabel:"Location:", locText:"Doha, Qatar",
+    ctaTitle:"Ready to book?", ctaText:"Message us on WhatsApp anytime—day or night. We’ll confirm your time and send a team fast.",
+    ctaWhatsApp:"WhatsApp Us",
+    footerCity:"Cleaning & Pest Control, Doha, Qatar",
+    footerOpen:"Open 24/7"
+  },
+  ar:{
+    brand:"مس فريندز للتجارة والمقاولات",
+    tagline:"التنظيف ومكافحة الآفات • متاحون 24/7",
+    toggleBugs:"إظهار حركة الآفات",
+    heroTitle:"تنظيف ومكافحة آفات لامع في الدوحة",
+    heroSub:"فِرق مدرّبة ومؤمّنة، مواد آمنة للأسرة، وصور قبل/بعد. خدمة طارئة وعلى مدار الساعة.",
+    chip1:"متاحون 24/7", chip2:"آمن للعائلة والحيوانات الأليفة", chip3:"استجابة في نفس اليوم",
+    ctaWhatsApp:"راسلنا واتساب", bookService:"احجز خدمة",
+
+    aboutTitle:"من نحن",
+    aboutWho:"مس فريندز شركة تنظيف ومكافحة آفات مقرّها الدوحة تقدّم خدمات موثوقة وصديقة للبيئة للمنازل والمكاتب والمنشآت...",
+    aboutDiffTitle:"لماذا نحن متميزون",
+    diff1:"متاحون 24/7 للحالات الطارئة",
+    diff2:"طاقم مدرّب ومؤمّن",
+    diff3:"مواد آمنة للعائلة والحيوانات الأليفة",
+    diff4:"تسعير واضح بلا مفاجآت",
+    diff5:"صور إثبات العمل بعد كل زيارة",
+    diff6:"ضمان رضا 100٪",
+
+    vmTitle:"الرؤية والرسالة",
+    visionTitle:"الرؤية",
+    visionText:"أن نكون الاسم الأكثر ثقة في الدوحة للتنظيف ومكافحة الآفات...",
+    missionTitle:"الرسالة",
+    missionText:"تقديم أماكن نظيفة وخالية من الآفات عبر طواقم مدرّبة ومؤمّنة...",
+
+    bookTitle:"احجز خدمة (24/7)",
+    lblName:"الاسم", lblPhone:"رقم واتساب", lblService:"الخدمة", lblDate:"التاريخ المفضل", lblTime:"الوقت المفضل", lblPlace:"العنوان / الموقع", lblNotes:"ملاحظات", sendBtn:"إرسال عبر واتساب",
+
+    /* Dropdown options (Arabic) */
+    svc0:"مكافحة الصراصير وبقّ الفراش",
+    svc1:"مكافحة البعوض والذباب",
+    svc2:"تنظيف المنازل",
+    svc3:"تنظيف عميق",
+    svc4:"غسيل الكنب والسجاد",
+    svc5:"تنظيف ما بعد البناء",
+    svc6:"تنظيف الزجاج والنوافذ",
+    svc7:"تنظيف خزانات المياه",
+    svc8:"تنظيف مجاري الهواء (AC)",
+    svc9:"تنظيف المكاتب / التجاري",
+
+    servicesTitle:"الخدمات",
+    catRes:"تنظيف سكني",
+    res1:"تنظيف الشقق والفيلات (يومي / أسبوعي / شهري)",
+    res2:"تنظيف عميق (ربيعي، انتقال/إخلاء)",
+    res3:"تنظيف عميق للمطابخ والحمامات",
+    res4:"غسيل الكنب والسجاد والستائر",
+    res5:"تنظيف المراتب والمفروشات (عث الغبار والبقع)",
+    catCom:"تنظيف تجاري",
+    com1:"تنظيف المكاتب (يومي / مجدول)",
+    com2:"المحلات والمعارض",
+    com3:"المدارس والحضانات",
+    com4:"نظافة المطاعم والمقاهي",
+    com5:"دعم الضيافة الفندقية",
+    catSpec:"تنظيف متخصص",
+    sp1:"تنظيف ما بعد البناء/الترميم",
+    sp2:"تنظيف الزجاج والنوافذ (داخلي/خارجي، منخفض/مرتفع)",
+    sp3:"العناية بالأرضيات: تلميع رخام، فرك سيراميك، خشب",
+    sp4:"تنظيف خزانات المياه",
+    sp5:"تنظيف مجاري الهواء (AC)",
+    catPest:"مكافحة الحشرات",
+    pc1:"مكافحة الصراصير وبقّ الفراش (فحص + علاج مستهدف + متابعة)",
+    pc2:"مكافحة القوارض (سدّ الفتحات وفخاخ)",
+    pc3:"مكافحة النمل والنمل الأبيض",
+    pc4:"مكافحة البعوض والذباب (تضبيب/رش ULV؛ معالجة يرقات المياه الراكدة)",
+    pc5:"التعقيم والتطهير",
+
+    whyTitle:"لماذا تختار مس فريندز؟",
+    why1:"خدمة 24/7 — لا نتوقف",
+    why2:"استجابة فورية وحالات طارئة",
+    why3:"مواد صديقة للبيئة وآمنة للعائلة",
+    why4:"طاقم مدرّب بزي موحّد ومؤمّن",
+    why5:"تحديثات واتساب + صور إثبات",
+    why6:"تسعير واضح ونطاق عمل مكتوب",
+    why7:"ضمان رضا 100٪",
+
+    areasTitle:"المناطق المشمولة",
+    areasText:"الدوحة • لوسيل • الوكرة • الخور • اللؤلؤة • الخليج الغربي • والمناطق القريبة.",
+    hoursTitle:"ساعات العمل",
+    hoursText:"على مدار 24 ساعة — 7 أيام في الأسبوع — خدمة طارئة متاحة",
+
+    safetyTitle:"السلامة والمعايير",
+    safe1:"مواد آمنة للعائلة (MSDS متاح)",
+    safe2:"بطاقات هوية وزي موحد، تدقيق خلفية",
+    safe3:"تعقيم الأدوات بين المهام",
+    safe4:"تهوية مناسبة ووسائل وقاية أثناء المعالجات",
+
+    faqTitle:"الأسئلة الشائعة",
+    q1:"هل المواد آمنة للأطفال والحيوانات الأليفة؟", a1:"نعم، نستخدم مواد معتمدة وصديقة للبيئة. نوصي بتهوية بسيطة بعد المعالجة.",
+    q2:"ما سرعة استجابتكم؟", a2:"نعمل 24/7. معظم الحجوزات في نفس اليوم، والحالات الطارئة خلال 1–2 ساعة داخل الدوحة.",
+    q3:"هل يجب أن أغادر المنزل أثناء العلاج؟", a3:"العلاجات الخفيفة لا تتطلب ذلك؛ أما القوية فنوصي بالخروج 2–4 ساعات.",
+
+    contactTitle:"التواصل",
+    waLabel:"واتساب / اتصال:", emailLabel:"البريد:", locLabel:"الموقع:", locText:"الدوحة، قطر",
+    ctaTitle:"جاهز للحجز؟", ctaText:"راسلنا على واتساب في أي وقت وسنؤكد موعدك ونرسل الفريق سريعًا.",
+    ctaWhatsApp:"راسلنا واتساب",
+    footerCity:"التنظيف ومكافحة الآفات، الدوحة، قطر",
+    footerOpen:"متاحون 24/7"
+  }
+};
+
+/* Translate all [data-i] nodes (including <option>) */
+function applyI18n(){
+  document.querySelectorAll("[data-i]").forEach(el=>{
+    const k=el.getAttribute("data-i");
+    if(dict[lang] && dict[lang][k]){
+      // Update text content
+      el.textContent = dict[lang][k];
+      // If it's an <option>, also update its value (so WA message uses Arabic when AR is active)
+      if(el.tagName === "OPTION"){ el.value = dict[lang][k]; }
+    }
+  });
+
+  const html=document.documentElement;
+  if(lang==="ar"){ html.setAttribute("dir","rtl"); html.setAttribute("lang","ar"); }
+  else{ html.setAttribute("dir","ltr"); html.setAttribute("lang","en"); }
+
+  document.getElementById("enBtn").classList.toggle("active",lang==="en");
+  document.getElementById("arBtn").classList.toggle("active",lang==="ar");
+
+  // Placeholders
+  document.getElementById("name").placeholder = lang==="ar" ? "اسمك" : "Your name";
+  document.getElementById("phone").placeholder = lang==="ar" ? "9745xxxxxx" : "9745xxxxxx";
+  document.getElementById("place").placeholder = lang==="ar" ? "المنطقة، البرج/الفيلا، رقم الشقة، ملاحظات المواقف" : "Area, tower/villa, flat #, parking notes";
+  document.getElementById("notes").placeholder = lang==="ar" ? "مثال: شقة 2 غرف؛ صراصير بالمطبخ؛ أحضروا سلّم." : "E.g., 2BHK; kitchen cockroaches; please bring ladder.";
+}
+document.getElementById("enBtn").onclick=()=>{ lang="en"; applyI18n(); };
+document.getElementById("arBtn").onclick=()=>{ lang="ar"; applyI18n(); };
+applyI18n();
+</script>
+</body>
+</html>
