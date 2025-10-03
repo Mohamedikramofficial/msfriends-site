@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mohamedikramofficial.github.io/msfriends-site/sitemap.xml
