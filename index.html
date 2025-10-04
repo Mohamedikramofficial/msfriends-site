@@ -18,12 +18,16 @@
   /* HEADER STYLES */
   .header{position:sticky;top:0;z-index:60;background:#ffffffcc;backdrop-filter:blur(10px);border-bottom:1px solid #e9eef5}
   .h-in{max-width:var(--max);margin:auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-  /* --- Changed header-left to column layout to match footer --- */
-  .header-left{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;}
-  .logo{width:80px;height:80px;display:grid;place-items:center;padding:5px;flex-shrink:0}
-  .logo img{width:100%;height:100%;object-fit:contain}
-  .brand-text{display:flex;flex-direction:column;align-items:center;}
-  .brandname{font-weight:800;color:var(--ink);font-size:15px; line-height: 1.2;}
+  .header-left{display:flex;align-items:center;min-width:0;}
+  .brand-text{
+    display:flex;
+    flex-direction:column;
+    transition: transform 0.3s ease-out; /* Added for hover animation */
+  }
+  .header-left:hover .brand-text {
+    transform: scale(1.04); /* Added hover animation */
+  }
+  .header .brandname{font-weight:800;color:var(--brand);font-size:15px; line-height: 1.2;}
   .tag{font-size:12px;color:#6b7280;font-weight:normal;}
   .header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
   .btn-call{display:none;font-size:13px;font-weight:700;padding:8px 12px;border-radius:10px;border:1px solid #dbe3ef;background:#fff}
@@ -56,7 +60,41 @@
   @media (min-width: 821px){.btn-call {display:flex}}
 
   /* HERO */
-  .hero{margin:16px auto;background:linear-gradient(180deg,#fff,#f0fdf4);border-radius:20px;box-shadow:var(--shadow);padding:22px 16px; text-align:center;}
+  .hero{
+    margin:16px auto;
+    background:linear-gradient(180deg,#fff,#f0fdf4);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    padding:22px 16px; 
+  }
+  .hero-top-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .hero-badge-container {
+    text-align: right;
+  }
+  .quality-badge-hero {
+    max-width: 160px; /* Increased size from 120px */
+    height: auto;
+  }
+  .hero-content-centered {
+    text-align: center; /* New class to center the rest of the content */
+  }
+  .logo-particle-container {
+    position: relative;
+    width: 140px; 
+    height: 140px; 
+    margin: 0; /* Changed margin to align left */
+    overflow: hidden;
+  }
+  .hero-logo { 
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+  }
   .hero h1{margin:0 0 8px;color:var(--ink);font-size:clamp(22px,5.5vw,36px)}
   .hero-image-container{margin: 24px 0;}
   .hero-image{max-width:100%; height:auto; display:block; margin:auto;}
@@ -72,6 +110,28 @@
   .card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:16px;margin-top:16px}
   .card h2{margin:6px 0 12px;color:var(--ink)}
   .card h3{margin:0 0 8px;color:#0f172a}
+
+  /* QUALITY BADGE SECTION */
+  .quality-container{
+    text-align: center;
+  }
+  .quality-badge{
+    max-width: 180px;
+    height: auto;
+    margin-top: 8px;
+  }
+  .equals-symbol{
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--brand);
+    line-height: 1;
+    margin: 8px 0;
+  }
+  .quality-text{
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+  }
 
   /* VIDEO SECTION */
   .video-container video {
@@ -144,11 +204,12 @@
   /* NEW FOOTER */
   .site-footer{background:var(--ink);color:#cbd5e1;padding:40px 0 0;margin-top:16px}
   .footer-container{max-width:var(--max);margin:auto;padding:16px;display:grid;grid-template-columns:1fr;gap:30px}
+  .footer-col .brand-group { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
   .footer-col h4{color:#fff;margin-top:0;margin-bottom:16px}
   .footer-col p, .footer-col a{font-size:14px;margin-bottom:10px;color:#94a3b8;transition:color .2s}
   .footer-col a:hover{color:#fff}
-  .footer-col .footer-logo{width:80px;height:80px;margin-bottom:12px; background: none; border-radius: 0; box-shadow: none;}
-  .footer-col .brand-text { margin-bottom: 16px; }
+  .footer-col .footer-logo{width:80px;height:80px;margin-bottom:0; background: none; border-radius: 0; box-shadow: none;}
+  .footer-col .brand-text { margin-bottom: 0; }
   .footer-col .brandname { font-weight:800; color:#fff; font-size:15px; line-height: 1.2; }
   .footer-col .tag { font-size:12px; color:#94a3b8; font-weight:normal; }
   .footer-links{display:flex;flex-direction:column;gap:8px}
@@ -161,10 +222,19 @@
   .back-to-top{position:fixed;bottom:85px;right:16px;width:40px;height:40px;background:var(--ink);color:#fff;border:none;border-radius:50%;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:70;font-size:20px}
   .back-to-top.show{opacity:1;pointer-events:auto}
 
-  /* BACKGROUND ANIMATION */
-  .particles-layer{position:fixed;inset:0;pointer-events:none;z-index:-1}
-  .particle{position:absolute;will-change:transform;opacity:.5}
-  .good-virus{width:30px;height:30px;color:var(--brand)}
+  /* LOGO PARTICLE ANIMATION */
+  .logo-particle-container .particle {
+    position: absolute;
+    will-change: transform;
+    opacity: .6;
+    pointer-events: none;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+  }
+  .logo-particle-container .particle svg {
+    color: var(--brand);
+  }
 
   /* RTL font */
   html[dir="rtl"] body{font-family:"Noto Sans Arabic", Tahoma, Arial}
@@ -179,7 +249,6 @@
   <div class="header">
     <div class="h-in">
         <div class="header-left">
-            <div class="logo"><img src="logo.png" alt="Ms Friends Logo"></div>
             <div class="brand-text">
                 <div class="brandname" data-i="brand">Ms Friends Trading & Contracting</div>
                 <div class="tag" data-i="tagline">Cleaning & Pest Control</div>
@@ -206,25 +275,35 @@
     </div>
 </div>
 
-  <div class="particles-layer" id="particlesLayer"></div>
+  
 
   <main class="wrap">
     <section class="hero">
-      <h1 data-i="heroTitle">Sparkling Cleaning & Pest Control in Doha</h1>
-      <p data-i="heroSub">Trained & insured staff, family-safe materials, and before/after proof photos. 24/7 same-day & emergency service.</p>
-      
-      <div class="hero-image-container">
-          <img src="1000563580.png" alt="Ms Friends Cleaning Team" class="hero-image">
+      <div class="hero-top-flex">
+        <div class="logo-particle-container" id="logoParticleContainer">
+          <img src="logo.png" alt="Ms Friends Logo" class="hero-logo">
+        </div>
+        <div class="hero-badge-container">
+          <img src="1000564305.jpg" alt="100% Premium Quality Guaranteed" class="quality-badge-hero">
+        </div>
       </div>
+      <div class="hero-content-centered">
+          <h1 data-i="heroTitle">Sparkling Cleaning & Pest Control in Doha</h1>
+          <p data-i="heroSub">Trained & insured staff, family-safe materials, and before/after proof photos. 24/7 same-day & emergency service.</p>
+          
+          <div class="hero-image-container">
+              <img src="1000563580.png" alt="Ms Friends Cleaning Team" class="hero-image">
+          </div>
 
-      <div class="chips">
-        <span class="chip" data-i="chip1">24/7 Available</span>
-        <span class="chip" data-i="chip2">Safe for Family & Pets</span>
-        <span class="chip" data-i="chip3">Same-day Response</span>
-      </div>
-      <div class="rowb">
-        <a id="waHero" class="btn btn-primary" href="#" data-i="ctaWhatsApp">WhatsApp Us</a>
-        <a class="btn" href="#booking" data-i="bookService">Book a Service</a>
+          <div class="chips">
+            <span class="chip" data-i="chip1">24/7 Available</span>
+            <span class="chip" data-i="chip2">Safe for Family & Pets</span>
+            <span class="chip" data-i="chip3">Same-day Response</span>
+          </div>
+          <div class="rowb">
+            <a id="waHero" class="btn btn-primary" href="#" data-i="ctaWhatsApp">WhatsApp Us</a>
+            <a class="btn" href="#booking" data-i="bookService">Book a Service</a>
+          </div>
       </div>
     </section>
 
@@ -278,6 +357,7 @@
                     <li data-i="diff6">100% satisfaction guarantee</li>
                 </ul>
             </section>
+
             <section class="card" id="safety">
                 <h2 data-i="safetyTitle">Safety & Standards</h2>
                 <ul style="margin:0 0 0 18px; padding-left:0;">
@@ -408,10 +488,12 @@
 <footer class="site-footer">
     <div class="footer-container">
         <div class="footer-col">
-            <img src="logo.png" alt="Ms Friends Logo" class="footer-logo">
-            <div class="brand-text">
-                <div class="brandname" data-i="brand">Ms Friends Trading & Contracting</div>
-                <div class="tag" data-i="tagline">Cleaning & Pest Control</div>
+            <div class="brand-group">
+                <img src="logo.png" alt="Ms Friends Logo" class="footer-logo">
+                <div class="brand-text">
+                    <div class="brandname" data-i="brand">Ms Friends Trading & Contracting</div>
+                    <div class="tag" data-i="tagline">Cleaning & Pest Control</div>
+                </div>
             </div>
             <p data-i="footerAbout">Your trusted partner for 24/7 cleaning and pest control services in Doha, Qatar. Committed to quality, safety, and customer satisfaction.</p>
         </div>
@@ -457,6 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutTitle: "About Us", aboutWho: "Ms Friends is a Doha-based cleaning and pest control company delivering reliable, eco-friendly services for homes, offices, and facilities. We pride ourselves on our meticulous attention to detail and commitment to customer satisfaction.",
             aboutDiffTitle: "What makes us different",
             diff1: "24/7 availability for cleaning & pest emergencies", diff2: "Trained & insured staff", diff3: "Family & pet-safe materials", diff4: "Transparent pricing, no surprises", diff5: "Proof-of-work photos after every job", diff6: "100% satisfaction guarantee",
+            qualityText: "Our Service Quality",
             bookTitle: "Book a Service (24/7)", lblName: "Name", lblPhone: "WhatsApp", lblService: "Service", lblDate: "Preferred Date", lblTime: "Preferred Time", lblPlace: "Location / Address", lblNotes: "Notes", sendBtn: "Send via WhatsApp",
             svc0: "Cockroach & Bedbug Treatment", svc1: "Mosquito/Fly Control", svc2: "Home Cleaning", svc3: "Deep Cleaning", svc4: "Sofa & Carpet Shampoo", svc5: "Post-construction Cleaning", svc6: "Window/Glass Cleaning", svc7: "Water Tank Cleaning", svc8: "AC Duct Cleaning", svc9: "Office/Commercial Cleaning",
             servicesTitle: "Our Services", catRes: "Residential Cleaning", res1: "Regular apartment & villa cleaning", res2: "Deep cleaning (move-in/out)", res3: "Kitchen & bathroom deep clean", res4: "Sofa & carpet shampooing",
@@ -480,6 +563,7 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutTitle: "من نحن", aboutWho: "إم إس فريندز هي شركة تنظيف ومكافحة حشرات في الدوحة تقدم خدمات موثوقة وصديقة للبيئة للمنازل والمكاتب والمنشآت. نفخر باهتمامنا الدقيق بالتفاصيل والتزامنا برضا العملاء.",
             aboutDiffTitle: "ما يميزنا",
             diff1: "متوفرون 24/7 لحالات الطوارئ", diff2: "فريق عمل مدرب ومؤمن عليه", diff3: "مواد آمنة للأسرة والحيوانات الأليفة", diff4: "أسعار شفافة بدون مفاجآت", diff5: "صور لإثبات جودة العمل بعد كل خدمة", diff6: "ضمان الرضا التام 100%",
+            qualityText: "جودة خدمتنا",
             bookTitle: "احجز خدمة (24/7)", lblName: "الاسم", lblPhone: "واتساب", lblService: "الخدمة", lblDate: "التاريخ المفضل", lblTime: "الوقت المفضل", lblPlace: "الموقع / العنوان", lblNotes: "ملاحظات", sendBtn: "أرسل عبر واتساب",
             svc0: "مكافحة الصراصير وبق الفراش", svc1: "مكافحة البعوض / الذباب", svc2: "تنظيف المنازل", svc3: "تنظيف عميق", svc4: "غسيل الكنب والسجاد", svc5: "تنظيف ما بعد البناء", svc6: "تنظيف النوافذ / الزجاج", svc7: "تنظيف خزانات المياه", svc8: "تنظيف دكتات التكييف", svc9: "تنظيف المكاتب / التجاري",
             servicesTitle: "خدماتنا", catRes: "تنظيف المنازل", res1: "تنظيف الشقق والفلل العادي", res2: "تنظيف عميق (انتقال)", res3: "تنظيف عميق للمطابخ والحمامات", res4: "غسيل الكنب والسجاد بالشامبو",
@@ -622,48 +706,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.5 });
     observer.observe(statsSection);
 
-    // --- PARTICLE BACKGROUND ---
-    const particlesLayer = document.getElementById('particlesLayer');
-    const particleCount = 20;
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        const isVirus = Math.random() > 0.5;
-        if(isVirus) {
-            particle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="good-virus"><path d="M10 21s-1-8-4-10-5-5-5-5 5 1 7 4 10 2 10 2-2 7-5 9-5 2-5 2z"></path><path d="M11 12s2-3 5-3 6 2 6 2-3 5-5 6-6-2-6-2z"></path><circle cx="12" cy="12" r="1"></circle><path d="m19 5 1 1"></path><path d="m18 9 1-1"></path><path d="m13 17 1 1"></path><path d="m8 20 1-1"></path><path d="m5 16-1 1"></path><path d="m4 12-1 1"></path><path d="m3 7 1-1"></path><path d="M20 14h1"></path><path d="M4 5H3"></path></svg>`;
-        } else {
-            particle.innerHTML = '✨'; // Sparkle
-            particle.style.fontSize = `${Math.random() * 15 + 10}px`;
+    // --- LOGO PARTICLE ANIMATION ---
+    const logoParticleContainer = document.getElementById('logoParticleContainer');
+    if (logoParticleContainer) {
+        const particleSVGs = [
+            `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l2.35 7.16h7.65l-6.18 4.44 2.36 7.16-6.18-4.44-6.18 4.44 2.36-7.16-6.18-4.44h7.65z"/></svg>`, // Star
+            `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`, // Plus
+            `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="12" r="12"></circle></svg>` // Circle
+        ];
+        
+        const particleCount = 40; // Increased particle count
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            particle.innerHTML = particleSVGs[i % particleSVGs.length];
+            
+            // Start particles off-screen from left or right
+            const startXPercent = (i % 2 === 0) ? -20 : 120;
+            const startYPercent = Math.random() * 100;
+            
+            particle.style.left = `${startXPercent}%`;
+            particle.style.top = `${startYPercent}%`;
+            particle.style.transform = `translate(-50%, -50%)`;
+
+            // Target is the center of the logo container
+            const targetXPercent = 50 + (Math.random() - 0.5) * 30;
+            const targetYPercent = 50 + (Math.random() - 0.5) * 30;
+            
+            const duration = Math.random() * 2000 + 2000; // Faster: 2s to 4s
+            const delay = Math.random() * 4000;
+
+            particle.animate([
+                { left: `${startXPercent}%`, top: `${startYPercent}%`, opacity: 1, transform: 'translate(-50%, -50%) scale(1.1)' },
+                { left: `${targetXPercent}%`, top: `${targetYPercent}%`, opacity: 0, transform: 'translate(-50%, -50%) scale(0.1)' }
+            ], {
+                duration: duration,
+                delay: delay,
+                iterations: Infinity,
+                easing: 'cubic-bezier(0.5, 0, 1, 1)' // Smoother ease-in
+            });
+            
+            logoParticleContainer.appendChild(particle);
         }
-        
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        const duration = Math.random() * 20 + 15;
-        const delay = Math.random() * 10;
-        
-        particle.style.left = `${x}vw`;
-        particle.style.top = `${y}vh`;
-        
-        particle.animate([
-            { transform: `translateY(0) rotate(0deg)` },
-            { transform: `translateY(-150px) rotate(180deg)` },
-            { transform: `translateY(0) rotate(360deg)` }
-        ], {
-            duration: duration * 1000,
-            delay: delay * 1000,
-            iterations: Infinity,
-            easing: 'linear'
-        });
-        
-        particlesLayer.appendChild(particle);
     }
 });
 </script>
 </body>
 </html>
-
-
-
-
 
 
