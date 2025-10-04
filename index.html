@@ -18,10 +18,11 @@
   /* HEADER STYLES */
   .header{position:sticky;top:0;z-index:60;background:#ffffffcc;backdrop-filter:blur(10px);border-bottom:1px solid #e9eef5}
   .h-in{max-width:var(--max);margin:auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .header-left{display:flex;align-items:center;gap:10px;min-width:0;}
-  .logo{width:60px;height:60px;display:grid;place-items:center;padding:5px;flex-shrink:0}
+  /* --- Changed header-left to column layout to match footer --- */
+  .header-left{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;}
+  .logo{width:80px;height:80px;display:grid;place-items:center;padding:5px;flex-shrink:0}
   .logo img{width:100%;height:100%;object-fit:contain}
-  .brand-text{display:flex;flex-direction:column}
+  .brand-text{display:flex;flex-direction:column;align-items:center;}
   .brandname{font-weight:800;color:var(--ink);font-size:15px; line-height: 1.2;}
   .tag{font-size:12px;color:#6b7280;font-weight:normal;}
   .header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
@@ -47,7 +48,7 @@
   @media (max-width: 820px){
     .nav-menu{position:absolute;top:0;left:0;width:100%;background:#fff;flex-direction:column;align-items:center;padding:80px 16px 30px;box-shadow:var(--shadow);transform:translateY(-110%);transition:transform .3s ease-in-out;z-index:99}
     .nav-menu.show{transform:translateY(0)}
-    .brand-text {display: none;} /* This is the fix: Hide text on mobile */
+    /* --- Removed .brand-text {display: none;} to show name on mobile --- */
     .hamburger-btn{display:block}
     .btn-call {display:none}
     .nav-menu .lang {display:none}
@@ -72,6 +73,13 @@
   .card h2{margin:6px 0 12px;color:var(--ink)}
   .card h3{margin:0 0 8px;color:#0f172a}
 
+  /* VIDEO SECTION */
+  .video-container video {
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 8px;
+  }
+
   /* FORM */
   .row{display:grid;gap:12px;grid-template-columns:1fr}
   label{font-weight:700;font-size:14px;color:#1f2937}
@@ -81,7 +89,7 @@
   .submit{margin-top:6px}
 
   /* SERVICES */
-  .svc-cat{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:14px;margin-bottom:12px}
+  .svc-cat{background:#f8fafc;border:1px solid #e2e8f0;border-radius:20px;padding:14px;margin-bottom:12px}
   .svc-list{display:grid;gap:10px;grid-template-columns:1fr}
   .svc{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px}
   .ico{width:28px;height:28px;border-radius:9px;background:#ecfdf5;display:grid;place-items:center;color:#065f46;font-weight:900;flex:0 0 28px}
@@ -125,35 +133,41 @@
   .stat-item .chart circle{stroke-width:10;fill:transparent}
   .stat-item .chart .bg-circle{stroke:#dcfce7}
   .stat-item .chart .progress-circle{stroke:var(--brand);stroke-linecap:round;stroke-dasharray:440;stroke-dashoffset:440;transition:stroke-dashoffset 2s ease-out}
-  .stats-section.animate .progress-circle{stroke-dashoffset:calc(440 - (440 * .95))}
+  .stats-section.animate .progress-circle.p1{stroke-dashoffset:calc(440 - (440 * .95))}
+  .stats-section.animate .progress-circle.p2{stroke-dashoffset:calc(440 - (440 * 1))}
+  .stats-section.animate .progress-circle.p3{stroke-dashoffset:calc(440 - (440 * .98))}
   .stat-item h3{font-size:clamp(36px, 8vw, 42px);color:var(--ink);margin:0;}
   .stat-item .chart-label{position:absolute;}
   .stat-item p{font-size:16px;color:var(--ink);font-weight:600;margin:0}
   @media (min-width: 600px) {.stats-container{flex-direction:row;justify-content:space-around}}
 
   /* NEW FOOTER */
-  .site-footer{background:var(--ink);color:#cbd5e1;padding:40px 0 0;margin-top:0}
+  .site-footer{background:var(--ink);color:#cbd5e1;padding:40px 0 0;margin-top:16px}
   .footer-container{max-width:var(--max);margin:auto;padding:16px;display:grid;grid-template-columns:1fr;gap:30px}
   .footer-col h4{color:#fff;margin-top:0;margin-bottom:16px}
   .footer-col p, .footer-col a{font-size:14px;margin-bottom:10px;color:#94a3b8;transition:color .2s}
   .footer-col a:hover{color:#fff}
-  .footer-col .footer-logo{width:60px;height:60px;margin-bottom:12px; background: none; border-radius: 0; box-shadow: none;}
+  .footer-col .footer-logo{width:80px;height:80px;margin-bottom:12px; background: none; border-radius: 0; box-shadow: none;}
+  .footer-col .brand-text { margin-bottom: 16px; }
+  .footer-col .brandname { font-weight:800; color:#fff; font-size:15px; line-height: 1.2; }
+  .footer-col .tag { font-size:12px; color:#94a3b8; font-weight:normal; }
   .footer-links{display:flex;flex-direction:column;gap:8px}
   .footer-bottom-bar{text-align:center;font-size:12px;color:#64748b;padding:20px 10px;margin-top:30px;border-top:1px solid #334155}
   @media (min-width: 768px) {.footer-container{grid-template-columns:1.5fr 1fr 1fr}}
 
   /* FLOATING BUTTONS */
+  .wa-float{position:fixed;bottom:16px;right:16px;z-index:70}
   #waFloat{border-radius:999px;width:56px;height:56px;padding:0;box-shadow:0 8px 24px rgba(0,0,0,0.2)}
   .back-to-top{position:fixed;bottom:85px;right:16px;width:40px;height:40px;background:var(--ink);color:#fff;border:none;border-radius:50%;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:70;font-size:20px}
   .back-to-top.show{opacity:1;pointer-events:auto}
 
   /* BACKGROUND ANIMATION */
-  .particles-layer{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .particles-layer{position:fixed;inset:0;pointer-events:none;z-index:-1}
   .particle{position:absolute;will-change:transform;opacity:.5}
   .good-virus{width:30px;height:30px;color:var(--brand)}
 
   /* RTL font */
-  html[dir="rtl"] body{font-family:"Noto Naskh Arabic", Tahoma, Arial}
+  html[dir="rtl"] body{font-family:"Noto Sans Arabic", Tahoma, Arial}
 
   /* RESPONSIVE DESIGN ADJUSTMENTS */
   @media (min-width:920px){.grid{grid-template-columns:1.05fr .95fr}}
@@ -200,7 +214,7 @@
       <p data-i="heroSub">Trained & insured staff, family-safe materials, and before/after proof photos. 24/7 same-day & emergency service.</p>
       
       <div class="hero-image-container">
-          <img src="team.png" alt="Ms Friends Cleaning Team" class="hero-image">
+          <img src="1000563580.png" alt="Ms Friends Cleaning Team" class="hero-image">
       </div>
 
       <div class="chips">
@@ -214,101 +228,79 @@
       </div>
     </section>
 
-    <section class="card" id="about">
-      <h2 data-i="aboutTitle">About Us</h2>
-      <p data-i="aboutWho">Ms Friends is a Doha-based cleaning and pest control company delivering reliable, eco-friendly services for homes, offices, and facilities...</p>
-      <h3 data-i="aboutDiffTitle">What makes us different</h3>
-      <ul style="margin:0 0 0 18px">
-        <li data-i="diff1">24/7 availability for cleaning & pest emergencies</li>
-        <li data-i="diff2">Trained & insured staff</li>
-        <li data-i="diff3">Family & pet-safe materials</li>
-        <li data-i="diff4">Transparent pricing, no surprises</li>
-        <li data-i="diff5">Proof-of-work photos after every job</li>
-        <li data-i="diff6">100% satisfaction guarantee</li>
-      </ul>
-    </section>
-
-    <section id="booking" class="card">
-      <h2 data-i="bookTitle">Book a Service (24/7)</h2>
-      <form id="bookForm">
-        <div class="row two">
-          <div><label data-i="lblName">Name</label><input id="name" required placeholder="Your name"></div>
-          <div><label data-i="lblPhone">WhatsApp</label><input id="phone" required placeholder="9745xxxxxx" inputmode="tel"></div>
-        </div>
-        <div class="row two">
-          <div>
-            <label data-i="lblService">Service</label>
-            <select id="service" required>
-              <option data-i="svc0" value="Cockroach & Bedbug Treatment">Cockroach & Bedbug Treatment</option>
-              <option data-i="svc1" value="Mosquito/Fly Control">Mosquito/Fly Control</option>
-              <option data-i="svc2" value="Home Cleaning">Home Cleaning</option>
-              <option data-i="svc3" value="Deep Cleaning">Deep Cleaning</option>
-              <option data-i="svc4" value="Sofa & Carpet Shampoo">Sofa & Carpet Shampoo</option>
-              <option data-i="svc5" value="Post-construction Cleaning">Post-construction Cleaning</option>
-              <option data-i="svc6" value="Window/Glass Cleaning">Window/Glass Cleaning</option>
-              <option data-i="svc7" value="Water Tank Cleaning">Water Tank Cleaning</option>
-              <option data-i="svc8" value="AC Duct Cleaning">AC Duct Cleaning</option>
-              <option data-i="svc9" value="Office/Commercial Cleaning">Office/Commercial Cleaning</option>
-            </select>
-          </div>
-          <div><label data-i="lblDate">Preferred Date</label><input id="date" type="date" required></div>
-        </div>
-        <div class="row two">
-          <div><label data-i="lblTime">Preferred Time</label><input id="time" type="time" required></div>
-          <div><label data-i="lblPlace">Location / Address</label><input id="place" required placeholder="Area, tower/villa, flat #, parking notes"></div>
-        </div>
-        <div class="row"><div><label data-i="lblNotes">Notes</label><textarea id="notes" placeholder="E.g., 2BHK; kitchen cockroaches; please bring ladder."></textarea></div></div>
-        <div class="submit"><button class="btn btn-primary" id="sendBtn" type="submit" data-i="sendBtn">Send via WhatsApp</button></div>
-      </form>
-    </section>
-
-    <section class="card" id="services">
-      <h2 data-i="servicesTitle">Services</h2>
-      <div class="svc-cat"><h3 data-i="catRes">Residential Cleaning</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="res1">Regular apartment & villa cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="res2">Deep cleaning (move-in/out)</div></div><div class="svc"><div class="ico">✓</div><div data-i="res3">Kitchen & bathroom deep clean</div></div><div class="svc"><div class="ico">✓</div><div data-i="res4">Sofa & carpet shampooing</div></div></div></div>
-      <div class="svc-cat"><h3 data-i="catCom">Commercial Cleaning</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="com1">Office cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="com2">Shops & showrooms</div></div><div class="svc"><div class="ico">✓</div><div data-i="com3">Schools & nurseries</div></div><div class="svc"><div class="ico">✓</div><div data-i="com4">Restaurant hygiene cleaning</div></div></div></div>
-      <div class="svc-cat"><h3 data-i="catSpec">Specialized Cleaning</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="sp1">Post-construction cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="sp2">Glass & window cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="sp3">Water tank cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="sp4">AC duct cleaning</div></div></div></div>
-      <div class="svc-cat" id="pest"><h3 data-i="catPest">Pest Control</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="pc1">Cockroach & bedbug treatment</div></div><div class="svc"><div class="ico">✓</div><div data-i="pc2">Rodent control</div></div><div class="svc"><div class="ico">✓</div><div data-i="pc3">Ant & termite treatment</div></div><div class="svc"><div class="ico">✓</div><div data-i="pc4">Mosquito & fly control</div></div></div></div>
-    </section>
-
-    <section class="card" id="safety">
-      <h2 data-i="safetyTitle">Safety & Standards</h2>
-      <ul style="margin:0 0 0 18px">
-        <li data-i="safe1">Family & pet-safe chemicals (MSDS available)</li>
-        <li data-i="safe2">Staff ID & uniforms, background-checked</li>
-        <li data-i="safe3">Tools sanitized between jobs</li>
-        <li data-i="safe4">Proper ventilation & PPE during treatments</li>
-      </ul>
-    </section>
-
-    <section class="card testimonials" id="testimonials">
-        <div class="slider-header">
-            <h2 data-i="testimonialsTitle">What Our Clients Say</h2>
-            <div class="slider-controls">
-                <button id="prevBtn" aria-label="Previous testimonial">←</button>
-                <button id="nextBtn" aria-label="Next testimonial">→</button>
-            </div>
-        </div>
-        <div class="slider-container">
-            <div class="slider-track" id="sliderTrack">
-                <div class="review-card">
-                    <div class="review-card-content">
-                        <div class="review-header">
-                            <div class="avatar">FA</div>
-                            <div class="author-info">
-                                <footer data-i="author1">- Fatima Al-Kuwari</footer>
-                                <div class="stars">★★★★★</div>
-                            </div>
-                        </div>
-                        <p data-i="review1">"Extremely professional and thorough. The team arrived on time and did an amazing job with the deep cleaning. Highly recommended!"</p>
+    <div class="grid">
+        <div>
+            <section id="booking" class="card">
+                <h2 data-i="bookTitle">Book a Service (24/7)</h2>
+                <form id="bookForm">
+                    <div class="row two">
+                    <div><label data-i="lblName">Name</label><input id="name" required placeholder="Your name"></div>
+                    <div><label data-i="lblPhone">WhatsApp</label><input id="phone" required placeholder="9745xxxxxx" inputmode="tel"></div>
                     </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-card-content">
-                        <div class="review-header">
-                            <div class="avatar">JS</div>
-                            <div class="author-info">
-                                <footer data-i="author2">- John Smith</footer>
-                                <div class="stars">★★★★★</div>
-                            </div>
-                        </div>
-                        <p data-i="review2">"Best pest c
+                    <div class="row two">
+                    <div>
+                        <label data-i="lblService">Service</label>
+                        <select id="service" required>
+                        <option data-i="svc0" value="Cockroach & Bedbug Treatment">Cockroach & Bedbug Treatment</option>
+                        <option data-i="svc1" value="Mosquito/Fly Control">Mosquito/Fly Control</option>
+                        <option data-i="svc2" value="Home Cleaning">Home Cleaning</option>
+                        <option data-i="svc3" value="Deep Cleaning">Deep Cleaning</option>
+                        <option data-i="svc4" value="Sofa & Carpet Shampoo">Sofa & Carpet Shampoo</option>
+                        <option data-i="svc5" value="Post-construction Cleaning">Post-construction Cleaning</option>
+                        <option data-i="svc6" value="Window/Glass Cleaning">Window/Glass Cleaning</option>
+                        <option data-i="svc7" value="Water Tank Cleaning">Water Tank Cleaning</option>
+                        <option data-i="svc8" value="AC Duct Cleaning">AC Duct Cleaning</option>
+                        <option data-i="svc9" value="Office/Commercial Cleaning">Office/Commercial Cleaning</option>
+                        </select>
+                    </div>
+                    <div><label data-i="lblDate">Preferred Date</label><input id="date" type="date" required></div>
+                    </div>
+                    <div class="row two">
+                    <div><label data-i="lblTime">Preferred Time</label><input id="time" type="time" required></div>
+                    <div><label data-i="lblPlace">Location / Address</label><input id="place" required placeholder="Area, tower/villa, flat #, parking notes"></div>
+                    </div>
+                    <div class="row"><div><label data-i="lblNotes">Notes</label><textarea id="notes" placeholder="E.g., 2BHK; kitchen cockroaches; please bring ladder."></textarea></div></div>
+                    <div class="submit"><button class="btn btn-primary" id="sendBtn" type="submit" data-i="sendBtn">Send via WhatsApp</button></div>
+                </form>
+            </section>
+        </div>
+        <div>
+            <section class="card" id="about">
+                <h2 data-i="aboutTitle">About Us</h2>
+                <p data-i="aboutWho">Ms Friends is a Doha-based cleaning and pest control company delivering reliable, eco-friendly services for homes, offices, and facilities. We pride ourselves on our meticulous attention to detail and commitment to customer satisfaction.</p>
+                <h3 data-i="aboutDiffTitle">What makes us different</h3>
+                <ul style="margin:0 0 0 18px; padding-left:0;">
+                    <li data-i="diff1">24/7 availability for cleaning & pest emergencies</li>
+                    <li data-i="diff2">Trained & insured staff</li>
+                    <li data-i="diff3">Family & pet-safe materials</li>
+                    <li data-i="diff4">Transparent pricing, no surprises</li>
+                    <li data-i="diff5">Proof-of-work photos after every job</li>
+                    <li data-i="diff6">100% satisfaction guarantee</li>
+                </ul>
+            </section>
+            <section class="card" id="safety">
+                <h2 data-i="safetyTitle">Safety & Standards</h2>
+                <ul style="margin:0 0 0 18px; padding-left:0;">
+                    <li data-i="safe1">Family & pet-safe chemicals (MSDS available)</li>
+                    <li data-i="safe2">Staff ID & uniforms, background-checked</li>
+                    <li data-i="safe3">Tools sanitized between jobs</li>
+                    <li data-i="safe4">Proper ventilation & PPE during treatments</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <section id="services" class="card">
+        <h2 data-i="servicesTitle">Our Services</h2>
+        <div class="svc-cat"><h3 data-i="catRes">Residential Cleaning</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="res1">Regular apartment & villa cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="res2">Deep cleaning (move-in/out)</div></div><div class="svc"><div class="ico">✓</div><div data-i="res3">Kitchen & bathroom deep clean</div></div><div class="svc"><div class="ico">✓</div><div data-i="res4">Sofa & carpet shampooing</div></div></div></div>
+        <div class="svc-cat"><h3 data-i="catCom">Commercial Cleaning</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="com1">Office cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="com2">Shops & showrooms</div></div><div class="svc"><div class="ico">✓</div><div data-i="com3">Schools & nurseries</div></div><div class="svc"><div class="ico">✓</div><div data-i="com4">Restaurant hygiene cleaning</div></div></div></div>
+        <div class="svc-cat"><h3 data-i="catSpec">Specialized Cleaning</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="sp1">Post-construction cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="sp2">Glass & window cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="sp3">Water tank cleaning</div></div><div class="svc"><div class="ico">✓</div><div data-i="sp4">AC duct cleaning</div></div></div></div>
+        <div class="svc-cat" id="pest"><h3 data-i="catPest">Pest Control</h3><div class="svc-list"><div class="svc"><div class="ico">✓</div><div data-i="pc1">Cockroach & bedbug treatment</div></div><div class="svc"><div class="ico">✓</div><div data-i="pc2">Rodent control</div></div><div class="svc"><div class="ico">✓</div><div data-i="pc3">Ant & termite treatment</div></div><div class="svc"><div class="ico">✓</div><div data-i="pc4">Mosquito & fly control</div></div></div></div>
+    </section>
+
+    <section class="card video-container">
+        <h2 data-i="videoTitle">See Our Team in Action</h2>
+        <video src="promo_video.mp4" loop autoplay muted playsinline></video>
+    </section>
+    
+  </mai
